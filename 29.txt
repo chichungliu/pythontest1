@@ -1,0 +1,38 @@
+#測試資料
+INSERT INTO students(cName, cSex, cBirthday, cEmail, cPhone, cAddr, cHeight, cWeight)
+VALUES ('張無忌', 'M', '1998-01-01', 'xyz@gmail.com', '02-12345678', '台北市忠孝東路100號', '185', '70'),
+('趙敏', 'F', '1998-02-02', 'abc@gmail.com', '03-12345678', '台北市忠孝東路200號', '165', '55');
+
+請將男性存成一個資料表，女生存成一個資料表CREATE TABLE table1
+男性
+CREATE TABLE table1
+SELECT * 
+FROM students
+WHERE cSex = 'M';
+
+女性
+CREATE TABLE table2
+SELECT * 
+FROM students
+WHERE cSex = 'F';
+
+查詢姓為「張」的所有資料
+SELECT *
+FROM students
+WHERE cName 
+LIKE ‘張%’;
+
+查詢性別為男性，而且生日在1990年之後的姓名、生日和電話
+SELECT cName, cBirthday, cPhone
+FROM students
+WHERE cSex='M' AND cBirthday>='1990-01-01';
+
+查詢是身高160之上，體重70以下的姓名、電話和地址，欄位名稱請以中文呈現
+SELECT 
+cName AS '姓名', 
+cPhone AS '電話', 
+cAddr AS '地址'
+FROM students
+WHERE cHeight>='160' AND cWeight<='70';
+
+
